@@ -24,6 +24,7 @@ RUN dnf makecache fast \
       tar \
       glibc \
       glibc-devel \
+      findutils \
  && dnf clean all
 
 # Disable requiretty.
