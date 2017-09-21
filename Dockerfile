@@ -16,7 +16,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 # Install Ansible and other requirements.
 RUN dnf makecache fast \
  && dnf -y install \
-      ansible \
+      python-pip \
       sudo \
       which \
       python2-dnf \
@@ -27,6 +27,8 @@ RUN dnf makecache fast \
       findutils \
  && dnf clean all
 
+RUN pip install ansible
+
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
 
@@ -35,3 +37,7 @@ RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
 
 VOLUME ["/sys/fs/cgroup", "/tmp", "/run"]
 CMD ["/usr/sbin/init"]
+
+# Report some information
+RUN python --version
+RUN ansible --version
