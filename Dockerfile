@@ -17,6 +17,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN dnf makecache fast \
  && dnf -y install \
       redhat-rpm-config \
+      python-devel \
       python-pip \
       sudo \
       which \
