@@ -17,6 +17,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN dnf makecache fast \
  && dnf -y install \
       redhat-rpm-config \
+      make \
       python-devel \
       python-pip \
       openssl-devel \
