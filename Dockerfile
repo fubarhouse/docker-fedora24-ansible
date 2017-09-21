@@ -22,6 +22,8 @@ RUN dnf makecache fast \
       python2-dnf \
       unzip \
       tar \
+      gcc \
+      ibffi-devel \
       glibc \
       glibc-devel \
       findutils \
