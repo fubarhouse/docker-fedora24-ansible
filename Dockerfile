@@ -23,7 +23,7 @@ RUN dnf makecache fast \
       unzip \
       tar \
       gcc \
-      ibffi-devel \
+      libffi-devel \
       glibc \
       glibc-devel \
       findutils \
