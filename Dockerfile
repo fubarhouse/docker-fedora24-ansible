@@ -19,6 +19,7 @@ RUN dnf makecache fast \
       redhat-rpm-config \
       python-devel \
       python-pip \
+      libssl-dev \
       sudo \
       which \
       python2-dnf \
